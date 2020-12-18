@@ -1,0 +1,52 @@
+Un dictionnaire en python est une sorte de liste mais au lieu d'utiliser des index , on utilise des clés alphanumériques. 
+
+ Pour initialiser un dictionnaire , on utile la syntaxe suivante:
+	  >>> a = {}
+	  ou 
+	  >>> a = dict()
+
+ Pour ajouter des valeurs à un dictionnaire il faut indiquer une clé ainsi qu'une valeur: 
+
+	>>> a = {}
+	>>> a["nom"] = "Wayne"
+	>>> a["prenom"] = "Bruce" 
+
+ La méthode get vous permet de récupérer une valeur dans un dictionnaire et si la clé est introuvable, vous pouvez donner une valeur à retourner par défaut: 
+
+	>>> data = {"name": "Wayne", "age": 45}
+	>>> data.get("name")
+	>>> data.get("adresse", "Adresse inconnue")
+
+ Vous pouvez utiliser la méthode haskey pour vérifier la présence d'une clé que vous cherchez: 
+   >>> a.has_key("nom")
+
+Il est possible de supprimer une entrée en indiquant sa clé, comme pour les listes: 
+   >>> del a["nom"]
+
+Pour récupérer les clés on utilise la méthode keys.
+
+	>>> fiche = {"nom":"Wayne", "prenom":"Bruce"}
+    >>> for cle in fiche.keys():
+    ...     print cle
+
+récupérer les valeurs 
+	>>> fiche = {"nom":"Wayne", "prenom":"Bruce"}
+	>>> for valeur in fiche.values():
+	...     print valeur
+
+récupérer les clés et les valeurs en même temps
+    >>> fiche = {"nom":"Wayne","prenom":"Bruce"}
+    >>> for cle,valeur in fiche.items():
+    ...     print cle, valeur
+
+ Comment utiliser des tuples comme clé dans un dictionnaire python? 
+
+	 Une des forces de python est la combinaison tuple/dictionnaire qui fait des merveilles dans certains cas comme lors de l'utilisation de coordonnées. 
+
+	>>> b = {}
+	>>> b[(3,2)]=12
+	>>> b[(4,5)]=13
+copier un dictionnaire : 
+	>>> d = {"k1":"Bruce", "k2":"Wayne"}
+	>>> e = d.copy()
+

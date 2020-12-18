@@ -1,0 +1,39 @@
+1) Python
+--------------
+	- la 1ere version de python est sortie 1991.
+	- Python est un langage de programmation interprété.
+	  c'est-à-dire qu'il n'est pas nécessaire de le compiler avant de l'exécuter. 
+	- Python est un langage facile à apprendre et son code est plus lisible.
+
+
+2) Calculs et varaibales 
+------------------------
+	Avec Python, on peut faire des calculs direct : 1 + 2, **, *, /, %
+	vous pouvez ajouter des espaces, cela n'aura pas d'incidences
+    
+    Ce n'est pas besoin de mettre le type d'une variable, pour la créer
+    jour = 25
+    jour2 = jour + 1
+    // 
+    jour = "aujourd'hui est le 25"
+    Il est possible de concaténer, c'est à dire d'ajouter du texte à du texte: 
+    date = jour + "/25"
+
+    Vous pouvez meme multiplier une chaine de caractère 
+    jour * 3
+
+	Echapper les quotes :
+	*********************
+    date = "le \"25 mai\""
+    date = "le '25 mai'"
+    date = """ le "25" 'mai' """
+
+    Les noms des variables 
+    **********************
+    il y a une liste des mots réservé par python : 
+    print, in, and, or, if, del, for, is, raise, assert, elif, from
+
+    Les types de variables
+    **********************
+    type(jour)
+

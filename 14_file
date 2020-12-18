@@ -1,0 +1,83 @@
+1)
+ Créer lire et écrire dans un fichier en python 
+
+ Une manière de stocker des données de manière pérenne est de les stocker dans des fichiers.
+Editer un fichier
+
+Pour éditer un fichier en python on utilise la fonction open .
+
+Cette fonction prend en premier paramètre le chemin du fichier (relatif ou absolu) et en second paramètre le type d'ouverture 
+
+
+2)
+
+ La fonction open
+
+Voici la syntaxe pour lire un fichier
+
+>>> fichier = open("data.txt", "r")
+>>> print fichier
+<open file 'data.txt', mode 'r' at 0x7ff6cf3fe4b0>
+
+On remarque que le deuxième paramètre est renseigné par un r , ce paramètre indique une ouverture de fichier en lecture 
+
+3)
+ Les types d'ouverture
+
+Il existe plusieurs modes d'ouverture:
+
+r, pour une ouverture en lecture (READ).
+w, pour une ouverture en écriture (WRITE), à chaque ouverture le contenu du fichier est écrasé. Si le fichier n'existe pas python le crée.
+a, pour une ouverture en mode ajout à la fin du fichier (APPEND). Si le fichier n'existe pas python le crée.
+b, pour une ouverture en mode binaire.
+t, pour une ouverture en mode texte.
+x, crée un nouveau fichier et l'ouvre pour écriture
+
+4)
+ Fermeture d'un fichier
+
+Comme tout élément ouvert, il faut le refermer une fois les instructions terminées. Pour cela on utilise la méthode close() .
+
+>>> fichier.close()
+
+
+5)
+ Lire le contenu d'un fichier
+
+Pour afficher tout le contenu d'un fichier, vous pouvez utiliser la méthode read sur l'objet-fichier.
+
+# coding: utf-8
+
+fichier = open("data.txt", "r")
+print fichier.read()
+
+6) 
+
+ Ecrire dans un fichier
+
+Voici la syntaxe pour écrire dans un fichier:
+
+fichier = open("data.txt", "a")
+fichier.write("Bonjour monde")
+fichier.close()
+
+A noter que pour le monde d'ouverture a , si vous voulez écrire à la ligne, vous pouvez utiliser le saut de ligne \n :
+
+fichier = open("data.txt", "a")
+fichier.write("\nBonjour monde")
+fichier.close()
+
+fichier.close()
+
+7) 
+
+ Le mot clé with
+
+Il existe une autre syntaxe plus courte qui permet de s'emanciper du problème de fermeture du fichier: le mot clé with .
+
+Voici la syntaxe:
+
+with open("data.txt", "r") as fichier:
+	print fichier.read()
+
+

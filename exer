@@ -1,0 +1,34 @@
+1) Lire le fichier cons-elc et stocker toutes les lignes dans une liste "data"
+   
+   def readFile(path):
+      with open("/opt/data/data.txt", "r") as fichier:
+             data = []
+	     for line in fichier:
+	         data.append(line)
+
+
+2) Compter les nombres des items dans "data"
+   
+   len(data)
+   data = [line.strip() for line in open("/opt/data/data.txt", 'r')]
+
+3) créer une fonction pour transférer un élement à un tuple 
+
+    def splitData(item):
+        items = item.split(";")
+        return items[0], items[1], items[2]
+
+   data2 = [splitData(item) for item in data]
+
+
+4) 
+data3 = [item for item in data2 if item[1] == "Professionnels"]
+len(data3)
+
+5) 
+data3 = [item for item in data2 if item[1] == "Professionnels"]
+somme = 0
+for i in data3:
+    aa = int(i[2])
+    somme =+ aa
+somme / 1000

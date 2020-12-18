@@ -1,0 +1,52 @@
+ Un tuple est une liste qui ne peut plus être modifiée (immutable / immuable).
+
+  Créer un tuple 
+  ************
+  >>> test = ()
+
+  Pour créer un tuple avec des valeurs, vous pouvez le faire de cette façon: 
+  >>> test = (1, "ok", "olivier")
+
+   Les parenthèses ne sont pas obligatoires mais facilite la lisibilité du code 
+   (rappelons que la force de python est sa simplicité de lecture): 
+
+  >>> mon_tuple = 1, 2, 3
+  >>> type(mon_tuple)
+
+
+ Lorsque vous créez un tuple avec une seule valeur, n'oubliez pas d'y ajouter une virgule, sinon ce n'est pas un tuple. 
+
+	>>> mon_tuple = ("ok")
+	>>> type(mon_tuple)
+	    <type 'str'>
+	>>> mon_tuple = ("ok",)
+	>>> type(mon_tuple)
+	     <type 'tuple'>
+
+
+	Afficher une valeur d'un tuple 
+	***************************
+	>>> mon_tuple[0]
+
+
+	A quoi sert un tuple alors? 
+	**************************
+	Le tuple permet une affectation multiple:
+
+	>>> v1, v2 = 11, 22
+
+	Il permet également de renvoyer plusieurs valeurs lors d'un appel d'une fonction: 
+
+	>>> def donne_moi_ton_nom():
+	  ...     return "olivier", "engel"
+	  ... 
+	
+	>>> donne_moi_ton_nom()
+	  ('olivier', 'engel')
+
+	  On utilisera un tuple pour définir des sortes de constantes qui n'ont donc pas vocation à changer. 
+
+	+ Le tuple est plus rapide que la liste. si vous définnesez une liste de /une constantes vaut 
+      mieux utiliser les tuple
+
+    + Votre code est sécurisé si vous «protégez en écriture» des données qui n'ont pas besoin d'être modifiées.

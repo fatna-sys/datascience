@@ -1,0 +1,54 @@
+ Les générateurs
+
+Les générateurs permettent de créer plus facilement des itérateurs.
+
+Créons un générateur de base:
+
+# coding: utf-8
+
+def generateur():
+    yield "a"
+    yield "b"
+    yield "c"
+
+Ensuite créons un itérateur:
+
+>>> i=generateur()
+>>> for v in i:
+...     print(v)
+... 
+a
+b
+c
+
+Alors c'est quoi ce bordel on n'y comprend rien. Tout d'abord on remaque qu'il existe un nouveau mot clé, spécialement crée pour les générateurs: yield . Ce mot clé est un peu similaire au return des fonctions sauf qu'il ne signifie pas la fin de l'exécution de la fonction mais une mise en pause et à la prochaine itération la fonction recherchera le prochain yield.
+
+Créons le même itérateur que dans le chapitre précédent:
+
+# coding: utf-8
+
+def generateur(n):
+    for i in range(n):
+        if i == 5:
+            print "Quoi déjà 5eme tour?"
+        yield i+1
+
+Bouclons maintenant sur notre iterable:
+
+>>> i=generateur(10)
+>>> for v in i:
+...     print(v)
+... 
+1
+2
+3
+4
+5
+Quoi déjà 5eme tour?
+6
+7
+8
+9
+10
+
+Voila, on arrive au même résultat mais avec beaucoup moins de lignes de code. 

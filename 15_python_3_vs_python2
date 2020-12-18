@@ -1,0 +1,36 @@
+ Différences entres python 2 et python 3
+
+1)
+
+Il y a eu beaucoup de changements pour la sortie de python 3 . Le changement le plus radical étant surement de transformer le print en fonction .
+
+Passer de:
+
+print "bonjour"
+
+à
+
+print("bonjour")
+
+
+ Il existe d'autres différences entre les versions python 2 et python 3:
+Print
+
+Python 2                            Python 3   
+print "Bonjour"                 →   print("Bonjour")
+print "Bonjour", variable1      →   print("Bonjour", variable1)
+print "\n".join([x, y])         →   print(x, y, sep="\n")
+print >> sys.stderr, "erreur"   →   print("Erreur", file=sys.stderr)
+print "une ligne ",             →   print("une ligne", end="")
+
+
+
+2)
+ Changement de nom de modules 
+ Réorganisation
+
+De nombreux objets ont été renommés et déplacés:
+
+Python 2                        Python 3
+xrange()                    →   range()
+reduce()                    →   functools.reduce()

@@ -1,0 +1,88 @@
+1) 
+
+Comparaison des élement 
+==      égal à 
+!=      différent de (fonctionne aussi avec )
+>       strictement supérieur à 
+>=      supérieur ou égal à
+<       strictement inférieur à 
+<=      inférieur ou égal à
+
+>>> 3 = 5
+>>> 3 == 4
+False
+
+
+2) 
+Prenon un exemple, on va donner une valeur à une variable et si cette valeur est supérieur à 5, alors on va incrémenter la valeur de 1
+
+>>> a = 10
+>>> if a > 5:
+...     a = a + 1
+... 
+>>> a
+11
+
+
+
+3) 
+Donner des instructions quelque soit les choix possibles 
+
+>>> a = 20
+>>> if a > 5:
+...     a = a + 1
+... else:
+...     a = a - 1
+
+Changeons uniquement la valeur de la variable a :
+
+>>> a = 3
+>>> if a > 5:
+...     a = a + 1
+... else:
+...     a = a - 1
+... 
+>>> a
+2
+
+4) 
+
+Condition elif
+
+Il est possible d'ajouter autant de conditions précises que l'on souhaite en ajoutant le mot clé elif , contraction de "else" et "if", qu'on pourrait traduire par "sinon".
+
+>>> a = 5
+>>> if a > 5:
+...     a = a + 1
+... elif a == 5:
+...     a = a + 1000
+... else:
+...     a = a - 1
+... 
+>>> a
+1005
+
+
+5) les mots clés AND et OR
+AND / OR
+
+>>> v = 15
+>>> v > 5 and v < 10
+False
+
+Essayons avec la valeur 7 :
+
+>>> v = 7
+>>> v > 5 and v < 10
+True
+
+
+6) 
+Il est également possible de chainer les comparateurs:
+
+>>> a, b, c = 1, 10, 100
+>>> a < b < c
+True
+>>> a > b < c
+False
+

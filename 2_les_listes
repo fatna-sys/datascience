@@ -1,0 +1,88 @@
+créer une liste : 
+liste = [1,2,3]
+liste
+
+ajouter un élément :
+*****************
+liste.append(4)
+
+liste.append("ok")
+on voit qu'il est possible de mélanger dans une même liste des variables de type différent. 
+on peut d'ailleurs mettre une liste dans une liste. 
+
+lire un item: 
+liste[index]
+
+modifier une valeur avec son index 
+******************
+liste[2] = "z"
+liste
+
+supprimer une valeur 
+********
++ Avec son index del liste[1]
++ Avec sa valeur : liste.remove(1)
+
+Compter le nombre d'items d'une liste
+*************
++ len(liste)
++ Nombre d'occurences d'une valeur : liste.count("a")
+
+Manipuler une liste 
+*********
+liste = [1, 10, 100, 250, 500]
+liste[0]
+liste[-1] # Cherche la dernière occurence
+liste[-4:] # Affiche les 4 dernières occurrences
+liste[:] # Affiche toutes les occurences
+liste[2:4] = [69, 70]
+liste[:] = [] # vide la liste
+
+Boucler sur une liste 
+*********
+Pour afficher les valeurs d'une liste, on peut utiliser une boucle: 
+liste = ["a","d","m"]
+for lettre in liste:
+    print lettre
+
+Copier une liste 
+*************
+Beaucoup de débutants font l'erreur de copier une liste de cette manière 
+x = [1, 2, 3]
+y = x
+Si vous changez une valeur de la liste y , la liste x sera elle aussi affectée par cette modification
+
+Alors comment copier une liste qui sera indépendante? 
+x = [1,2,3]
+y = x[:]
+
+Transformer une string en liste 
+******************************
+Parfois il peut être utile de transformer une chaine de caractère en liste. Cela est possible avec la méthode split 
+ma_chaine = "Olivier:ENGEL:Strasbourg"
+ma_chaine.split(":")
+
+Transformer une liste en string 
+******************************
+['Olivier', 'ENGEL', 'Strasbourg']
+":".join(liste)
+
+Trouver un item dans une liste 
+*****************************
+3 in liste 
+
+la fonction range 
+****************
+La fonction range génère une liste composée d'une simple suite arithmétique.
+range(10)
+
+Astuces : 
+********
+x = [1, 2, 3]
+y = [4, 5, 6]
+x + y 
+mutiplier une liste : x * 5
+afficher le 2eme element : liste[2]
+afficher le 2eme dernier element : liste[-2]
+Ce qui peut être utile pour initialiser une liste: 
+[0] * 5

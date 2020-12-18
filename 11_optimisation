@@ -1,0 +1,43 @@
+ Les compréhensions de liste python 
+
+Il y a des astuces python qui permettent d' optimiser le code.
+
+0) 
+>>> print("hello") if a > 5 else print("hh")
+
+1)
+>>> b = []
+>>> for x in a:
+...     if x > 5:
+...         b.append(x)
+... 
+>>> b
+[7, 9, 6, 6, 6, 8]
+
+
+2)
+L'idée est simple: simplifier le code pour le rendre plus lisible et donc plus rapide à écrire et plus simple à maintenir.
+Syntaxe
+
+3)
+new_list = [function(item) for item in list if condition(item)]
+
+4)
+Prenons un exemple d'une liste:
+
+>>> a = [1,4,2,7,1,9,0,3,4,6,6,6,8,3]
+
+Il est possible de faire exactement ce que fait ce bloc de code en une seule ligne:
+
+>>> [x for x in a if x > 5]
+[7, 9, 6, 6, 6, 8]
+
+Exécuter une fonction sur chaque item d'une liste
+
+Prenons l'exemple d'une conversion de string en integer de plusieurs items:
+
+>>> items = ["5", "10", "15"]
+>>> items = [int(x) for x in items]
+>>> print(items)
+[5, 10, 15]
+

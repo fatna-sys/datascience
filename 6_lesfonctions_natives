@@ -1,0 +1,426 @@
+ Les fonctions natives
+
+Il existe des fonctions natives à python (ou builtin ).
+abs(x)
+
+Retourne une valeur absolue
+
+>>> abs(-1)
+1
+
+all(iterable)
+
+Retourne True si tous les éléments d'un élément itérable sont True
+
+>>> liste = [True,True,True,1]
+>>> all(liste)
+True
+
+any(iterable)
+
+Retourne True si au moins un élément d'un élément itérable est True
+
+>>> liste = [True,False, True]
+>>> any(liste)
+True
+
+bin(x)
+
+Convertit un integer en chaine de caractères binaires.
+
+>>> bin(101)
+'0b1100101'
+
+callable(object)
+
+Determine si un objet est callable .
+
+>>> callable("A")
+False
+>>> callable(int)
+True
+
+str.capitalize()
+
+La méthode capitalize permet de mettre une chaine de caractères au format Xxxxx
+
+>>> "oLIviER".capitalize()
+'Olivier'
+
+choice([])
+
+Retourne une valeur d'une liste aléatoirement.
+
+>>> import random
+>>> random.choice([1,2,3,4,5])
+3
+>>> random.choice([1,2,3,4,5])
+2
+
+str.count(string)
+
+La méthode count compte le nombre d'occurences de la recherche demandée.
+
+>>> "olivier".count("i")
+2
+
+dir(object)
+
+Indique les noms de la structure de l'objet.
+
+>>> dir(int)
+['__abs__', '__add__', '__and__', '__class__', '__cmp__', '__coerce__', '__delattr__', '__div__', '__divmod__', '__doc__', '__float__', '__floordiv__', '__format__', '__getattribute__', '__getnewargs__', '__hash__', '__hex__', '__index__', '__init__', '__int__', '__invert__', '__long__', '__lshift__', '__mod__', '__mul__', '__neg__', '__new__', '__nonzero__', '__oct__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdiv__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'imag', 'numerator', 'real']
+
+str.endswith(str)
+
+La méthode endswith test si une chaine de caractères se termine par la chaine demandée
+
+>>> a = "olivier"
+>>> a.endswith("r")
+True
+>>> a.endswith("er")
+True
+>>> a.endswith("é")
+False
+
+eval(expression,globals=None,locals=None)
+
+Execute une chaine de caractères.
+
+>>> v = 101
+>>> eval('v+1')
+102
+
+str.find(string)
+
+La méthode find trouve la première occurence de la recherche demandée.
+
+>>> "olivier".find("i")
+2
+
+help(element)
+
+Cette fonction vous retourne des informations sur l'utilisation de l'élément qui vous intéresse.
+
+>>> help(int)
+
+Help on class int in module __builtin__:
+
+class int(object)
+ |  int(x=0) -> int or long
+ |  int(x, base=10) -> int or long
+ |  
+ |  Convert a number or string to an integer, or return 0 if no arguments
+ |  are given.  If x is floating point, the conversion truncates towards zero.
+ |  If x is outside the integer range, the function returns a long instead.
+ |  
+ |  If x is not a number or if base is given, then x must be a string or
+ |  Unicode object representing an integer literal in the given base.  The
+ |  literal can be preceded by '+' or '-' and be surrounded by whitespace.
+ |  The base defaults to 10.  Valid bases are 0 and 2-36.  Base 0 means to
+ |  interpret the base from the string as an integer literal.
+ |  >>> int('0b100', base=0)
+ |  4
+
+hex
+
+Convertit un nombre en valeur hexadécimale.
+
+>>> hex(16)
+'0x10'
+
+str.isalnum()
+
+Retoune True si tous les caractères sont alphanumériques et qu'il y a au moins un caractère. Sinon False.
+
+>>> "25".isalnum()
+True
+>>> "25b".isalnum()
+True
+>>> "25bé".isalnum()
+True
+>>> "25bé@".isalnum()
+False
+>>> "-".isalnum()
+False
+>>> "_".isalnum()
+False
+>>> "".isalnum()
+False
+
+str.isalpha()
+
+Retourne True si tous les caractères sont des lettres et qu'il y a au moins un caractère. Sinon False
+
+>>> "x".isalpha()
+True
+>>> "-".isalpha()
+False
+>>> "12".isalpha()
+False
+>>> "jean-claude".isalpha()
+False
+>>> "jean claude".isalpha()
+False
+>>> "élise".isalpha()
+True
+
+str.isdigit()
+
+Retourne True si tous les caractères sont numériques et qu'il y a au moins un caractère. Sinon False.
+
+>>> "1".isdigit()
+True
+>>> "1.5".isdigit()
+False
+>>> "1,5".isdigit()
+False
+>>> "3b".isdigit()
+False
+>>> " ".isdigit()
+False
+
+str.islower()
+
+Retoune True si tous les caractères sont en minuscule.
+
+>>> "olivier".islower()
+True
+>>> "Olivier".islower()
+False
+
+str.isspace()
+
+Retoune True si il n'y a que des espaces et au moins un caractère.
+
+>>> " ".isspace()
+True
+>>> "jean louis".isspace()
+False
+>>> "    ".isspace()
+True
+
+str.istitle()
+
+Retourne True si la chaine a un format titre.
+
+>>> "Titre".istitle()
+True
+>>> "TitrE".istitle()
+False
+>>> "Titre de mon site".istitle()
+False
+>>> "Titre De Mon Site".istitle()
+True
+
+str.isupper()
+
+Retourne True si tous les caractères sont en majucule et qu'il y a au moins un caractère.
+
+>>> "OLIVIER".isupper()
+True
+>>> "Olivier".isupper()
+False
+>>> "OlivieR".isupper()
+False
+
+str.join(liste)
+
+La méthode join transforme une liste en chaine de caractères.
+
+>>> ":".join(["olivier", "engel"])
+'olivier:engel'
+
+len(s)
+
+Retourne le nombre d'items d'un objet.
+
+>>> len([1,2,3])
+3
+>>> len("olivier")
+7
+
+locals()
+
+Retounr un dictionnaire avec les valeurs des variables en cours.
+
+>>> locals()
+{'a': 12, '__builtins__': , '__package__': None, 'i': 20, 'v': 101, 'liste': [True, False, True], '__name__': '__main__', '__doc__': None}
+
+str.lower()
+
+La méthode lower permet de mettre en minuscule une chaine de caractères.
+
+>>> "OLIVIER".lower()
+'olivier'
+
+map(function, [])
+
+Execute une fonction sur chaque item d'un élément itérable.
+
+>>> def add_one(x):
+...     return x + 1
+... 
+>>> map(add_one, [1,2,3])
+[2, 3, 4]
+
+max() / min()
+
+Retourne la valeur la plus élévée pour max() et la plus basse pour min()
+
+>>> max([1,3,2,6,99,1])
+99
+>>> max(1,4,6,12,1)
+12
+
+randint()
+
+Retourne un int aléatoire.
+
+>>> import random
+>>> random.randint(1,11)
+5
+
+random()
+
+Retourne une valeur aléatoire.
+
+>>> import random
+>>> random.random()
+0.9563522652738929
+
+str.replace(string, string)
+
+La méthode replace remplace un segment d'une chaine de caractères par une autre:
+
+>>> "olivier".replace("i", "a")
+'olavaer'
+
+reverse()
+
+La méthode reverse inverse l'ordre d'une liste.
+
+>>> x = [1,4,7]
+>>> x.reverse()
+>>> x
+[7, 4, 1]
+
+reversed([])
+
+Retourne un itérateur inversé.
+
+>>> list(reversed([1,2,3,4]))
+[4, 3, 2, 1]
+
+round(number)
+
+Arrondi un nombre.
+
+>>> round(1)
+1.0
+>>> round(1.2)
+1.0
+>>> round(1.5)
+2.0
+>>> round(1.7)
+2.0
+>>> round(-1.7)
+-2.0
+>>> round(-1.2)
+-1.0
+
+shuffle([])
+
+Mélange aléatoirement une liste.
+
+>>> import random
+>>> x = [1,2,3,4,5]
+>>> random.shuffle(x)
+>>> x
+[2, 5, 4, 1, 3]
+
+str.startswith(prefix[, start[, end]])
+
+Retourne True si la chaine commence par le préfix indiqué. Ce préfix peut être un tuple. Les paramètres start et end (optionnel) test la chaine à la position indiquée. Le test est sensible à la case.
+
+>>> "olivier".startswith("ol")
+True
+>>> "olivier".startswith(("ol", "eng"))
+True
+>>> "olivier".startswith(("xxx", "eng"))
+False
+>>> "olivier".startswith("OL")
+False
+>>> "olivier".startswith("ol")
+True
+
+list.sort()
+
+La méthode sort permet de trier une liste.
+
+>>> l = [5,1,4,2,10]
+>>> l.sort()
+>>> l
+[1, 2, 4, 5, 10]
+
+sorted(iterable)
+
+Tri un élément itérable.
+
+>>> sorted([3,2,12,1])
+[1, 2, 3, 12]
+
+str.split(séparateur)
+
+La méthode split transforme une chaine de caractères en liste.
+
+>>> "olivier:engel".split(":")
+['olivier', 'engel']
+
+str.splitlines([keepends])
+
+Retourne une liste des lignes de la chaine. Cette méthode utilise le saut à la ligne universel, le retour à la ligne n'est pas inclu, à moins de renseigner le paramètre keepends à True.
+
+>>> "olivier\n\n\engel\n\ndéveloppeur".splitlines()
+['olivier', '', '\\engel', '', 'développeur']
+>>> "olivier\nengel\ndéveloppeur".splitlines()
+['olivier', 'engel', 'développeur']
+>>> "olivier\n\rengel\n\rdéveloppeur".splitlines()
+['olivier', '', 'engel', '', 'développeur']
+>>> "olivier\r\nengel\r\ndéveloppeur".splitlines()
+['olivier', 'engel', 'développeur']
+>>> "olivier\r\nengel\r\n\r\ndéveloppeur".splitlines()
+['olivier', 'engel', '', 'développeur']
+>>> "olivier\r\nengel\r\n\r\ndéveloppeur".splitlines(True)
+['olivier\r\n', 'engel\r\n', '\r\n', 'développeur']
+
+sum(iterable [,start])
+
+Additionne les valeurs d'un élément itérable.
+
+>>> sum([1,2,3])
+6
+
+str.title()
+
+Transforme la chaine dans un format title.
+
+>>> "Ceci est un titre".title()
+'Ceci Est Un Titre'
+
+upper()
+
+La méthode upper permet de mettre en majuscule une chaine de caractères.
+
+>>> "olivier".upper()
+'OLIVIER'
+
+zip(*iterables)
+
+Permet de regrouper sous la forme d'un tuple les items de listes.
+
+>>> a = ["olivier", "bruce", "john"]
+>>> b = ["engel", "wayne", "Wayne"]
+>>> zip(a,b)
+[('olivier', 'engel'), ('bruce', 'wayne'), ('john', 'Wayne')]
+

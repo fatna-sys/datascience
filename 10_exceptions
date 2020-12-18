@@ -1,0 +1,92 @@
+Les exceptions python
+=====================
+
+1)
+Il y a des opérations qui sont impossible, 
+comme la division par zéro. 
+
+>>> 5/0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: integer division or modulo by zero
+
+2) objectif est d'éviter cette erreur?
+
+Une solution serait de vérifier la valeur de la variable et si elle est égale à 0, on annule tout.
+
+Une autre solution serait d'anticiper qu'il serait possible qu'il y ait une erreur et en cas d'erreur prévoir des instructions spécifiques.
+
+3)
+
+Try except
+Try signifie "essayer" en anglais, ce mot clé permet d'essayer une action et si l'action échoue on peut lui donner d'autres instructions dans un bloc except .
+
+>>> v = 0
+>>> w = 5
+>>> try:
+...     w/v
+...     print("Ok pas erreur")
+... except:
+...     print("Erreur")
+... 
+Erreur
+
+
+4) 
+si il y a une erreur est blocante, c'est à dire que si les instructions sont exécutées dans un script, le script s'arrête et cela devient un bug
+Cibler les erreurs
+
+La syntaxe exposée plus haut répond à tout type d'erreur, mais il est possible d'affiner la gestion d'erreur.
+
+5)
+Par exemple que se passe-t-il si nous divisons un nombre par des lettres?
+
+>>> 5/"olivier"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+
+6) 
+On remarque que python nous affiche une erreur mais elle est différente de celle provoquée par la division par 0. Ici l'erreur est TypeError .
+
+Il est possible en python d'executer des instructions en fonction du type d'erreur. Par exemple si la valeur est 0 on aimerait afficher un message et si le dénominateur est du texte on aimerait pouvoir afficher un autre message à l'utilisateur.
+
+7))
+>>> v = 0
+>>> w = 5
+>>> try:
+...     w/v
+...     print("Ok pas erreur")
+... except TypeError:
+...     print("Merci d'utiliser des chiffres")
+... except ZeroDivisionError:
+...     print("Merci de ne pas utiliser le 0")
+... 
+Merci de ne pas utiliser le 0
+
+et dans le cas où la variable v vaut " olivier ":
+
+>>> v = "olivier"
+>>> w = 5
+>>> try:
+...     w/v
+...     print("Ok pas erreur")
+... except TypeError:
+...     print("Merci d'utiliser des chiffres")
+... except ZeroDivisionError:
+...     print("Merci de ne pas utiliser le 0")
+... 
+Merci d'utiliser des chiffres
+
+Finally
+
+8) Not doing this : 
+On utilise le mot clé finally pour exécuter des instructions quelque soit les erreurs générées ou non (et même si il y a présence d'un return ). Dans tous les cas les instructions placées dans finally seront executées.
+
+try:
+    pass 
+except:
+    pass
+finally:
+    print("Execution")
+
